@@ -15,11 +15,3 @@ DEFINE r(A,C) "A|C"
 DEFINE ww(z) "!z"
 
 DEFINE w(a) "!a"
-
-
-
-
-
-
-
-
