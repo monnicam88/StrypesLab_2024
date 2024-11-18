@@ -1,6 +1,5 @@
 #include "LogicalExpressionHandler.h"
 
-// Return precedence of logical operators
 int logicalOperatorsPrecedence(const char customizedOperator) {
     switch (customizedOperator) {
         case '!': return 3;
@@ -11,7 +10,6 @@ int logicalOperatorsPrecedence(const char customizedOperator) {
     return -1;
 }
 
-// Executes a logical expression in a postfix record
 int postfixExpressionEvaluation(const CustomizedString::CharArray& postfixExpression) {
     CustomizedStack::Stack stack;
     
@@ -48,7 +46,6 @@ int postfixExpressionEvaluation(const CustomizedString::CharArray& postfixExpres
     return CustomizedStack::getStackTop(stack);
 }
 
-// Synthesis by 1 for the given input
 std::string synthesisByOne(const int* input, const int inputSize) {
     std::string result = "(";
     for (int i = 0; i < inputSize; i++) {
