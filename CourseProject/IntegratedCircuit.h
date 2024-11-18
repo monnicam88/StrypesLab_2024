@@ -2,7 +2,6 @@
 
 #include "DataStructures.h"
 
-// Contains the data of an integrated circuit
 struct IntegratedCircuit {
 	std::string name = "";
 	std::string expression = "";
