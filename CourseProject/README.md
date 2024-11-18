@@ -30,6 +30,14 @@ The entire source code of the project is available here, along with the "_Basic 
 | `IntegratedCircuitStorage.cpp` | Implements specific functions for creation and manipulation of integrated circuits storage |
 | `LogicalExpressionHandler.cpp` | Implements specific functions for logical expressions parsing, evaluation and conversion |
 
+* **Text files**
+  
+| _.txt_ files | Implement the baseline defined interface of the corresponding module |
+| --- | --- |
+| `TruthTable<N>.txt` | Each file contains different truth tables that can be used for testing the command `FIND` |
+| `IntegratedCircuitsExamples.txt` | Contains different valid and invalid integrated circuits inputs |
+
+
 ### 2. Sample valid workflow of the project
 ---
       1) User interface
@@ -47,7 +55,7 @@ The entire source code of the project is available here, along with the "_Basic 
       5) PRINT & EXIT commands
   ![5](https://github.com/user-attachments/assets/cc0e0dcb-4445-4ab8-8486-c304622d5f3d)
 
-### 3. Sample INvalid workflow of the project
+### 3. Sample invalid workflow of the project
 ---
       1) User interface
   ![1](https://github.com/user-attachments/assets/f31abdfe-0bbe-42c6-8adf-03822c0b113e)
