@@ -3,7 +3,6 @@
 #include "IntegratedCircuitInput.h"
 #include "LogicalExpressionHandler.h"
 
-// Parse file name
 std::string getFileName(std::istream& istream) {
     std::string fileName;
     std::getline(istream >> std::ws, fileName);
@@ -11,14 +10,12 @@ std::string getFileName(std::istream& istream) {
     return fileName;
 }
 
-// Create new input for an integrated circuit
 CircuitInput createCircuitInput() {
     CircuitInput input;
     input.arguments = CustomizedVector::createIntArray(ProjectConstants::MAX_ARRAY_SIZE);
     return input;
 }
 
-// Parse input for integrated circuit
 CircuitInput parseCommandRUN(std::istream& istream) {
     CircuitInput input = createCircuitInput();
     std::getline(istream >> std::ws, input.circuitName, '(');
@@ -35,13 +32,11 @@ CircuitInput parseCommandRUN(std::istream& istream) {
     return input;
 }
 
-// Deallocate momery used from a specific input
 void freeCircuitInputMemory(CircuitInput& input) {
     CustomizedVector::deleteIntArray(input.arguments);
     input.circuitName = "";
 }
 
-// Execute 'ALL' command
 void executeCommandALL(IntegratedCircuit& circuit) {
     CircuitInput input = createCircuitInput();
     input.circuitName = circuit.name;
@@ -54,7 +49,6 @@ void executeCommandALL(IntegratedCircuit& circuit) {
     freeCircuitInputMemory(input);
 }
 
-// Converts an input expression of integrated circuit to tokens
 void tokenizeExpression(CustomizedString::CharArray& tokens, const std::string& expression) {
     for (const auto symbol : expression) {
         if (symbol == ' ' || symbol == '\"')
@@ -63,8 +57,6 @@ void tokenizeExpression(CustomizedString::CharArray& tokens, const std::string& 
     }
 }
 
-// Print all possible combinations for the integrated 
-// circuit input together with the result
 void printCommandALL(const IntegratedCircuit& circuit, CircuitInput& input, const int currentIndex) {
     const int length = input.arguments.length;
 
@@ -84,7 +76,6 @@ void printCommandALL(const IntegratedCircuit& circuit, CircuitInput& input, cons
     }
 }
 
-// Execute integrated circuit with given input
 int executeCommandRUN(const IntegratedCircuit& circuit, const CircuitInput& input) {
     CustomizedString::CharArray infixExpression = getInputExpression(circuit, input);
     CustomizedString::CharArray postfixExpression = convertInfixToPostfix(infixExpression);
@@ -116,7 +107,6 @@ CustomizedString::CharArray getInputExpression(const IntegratedCircuit& circuit,
     return inputExpr;
 }
 
-// Parse integrated circuit from the standart input
 IntegratedCircuit readIntegratedCircuit(std::istream& istream) {
     IntegratedCircuit circuit = createIntegratedCircuit();
 
