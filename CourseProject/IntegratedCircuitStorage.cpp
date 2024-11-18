@@ -1,6 +1,5 @@
 #include "IntegratedCircuitStorage.h"
 
-// Create a container for integrated circuits
 CircuitStorage makeCircuitStorage(const int capacity) {
     CircuitStorage storage;
     storage.container = new IntegratedCircuit[capacity];
@@ -8,7 +7,6 @@ CircuitStorage makeCircuitStorage(const int capacity) {
     return storage;
 }
 
-// Deallocate memory used from the container
 void deleteCircuitStorage(CircuitStorage& storage) {
     for (int i = 0; i < storage.size; i++)
         deleteIntegratedCircuit(storage.container[i]);
@@ -18,7 +16,6 @@ void deleteCircuitStorage(CircuitStorage& storage) {
     storage.capacity = storage.size = 0;
 }
 
-// Print all of the integrated circuits in the container
 void printCircuitStorage(const CircuitStorage& storage) {
     for (int i = 0; i < storage.size; i++) {
         std::cout << " " << i + 1 << ".";
@@ -26,7 +23,6 @@ void printCircuitStorage(const CircuitStorage& storage) {
     }
 }
 
-// Make a copy of an circuit in the storage
 void addCircuitToStorage(CircuitStorage& storage, const IntegratedCircuit& circuit) {
     assert(storage.size < storage.capacity && "Circuit storage capacity exceeded.");
 
@@ -48,7 +44,6 @@ void addCircuitToStorage(CircuitStorage& storage, const IntegratedCircuit& circu
     storage.size++;
 }
 
-// Check if specific circuit is in the container
 bool isCircuitInStorage(const CircuitStorage& storage, const std::string& name) {
     for (int i = 0; i < storage.size; i++) {
         if (storage.container[i].name == name)
@@ -57,7 +52,6 @@ bool isCircuitInStorage(const CircuitStorage& storage, const std::string& name) 
     return false;
 }
 
-// Look for a specific circuit and return it, if it is in the storage
 IntegratedCircuit* findCircuit(const CircuitStorage& storage, const std::string& name) {
     for (int i = 0; i < storage.size; i++) {
         if (storage.container[i].name == name)
