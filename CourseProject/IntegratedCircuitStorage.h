@@ -2,7 +2,6 @@
 
 #include "IntegratedCircuit.h"
 
-// Container for all circuits
 struct CircuitStorage {
     IntegratedCircuit* container = nullptr;
     int capacity = 0;
