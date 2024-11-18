@@ -5,9 +5,7 @@
 
 #include "IntegratedCircuit.h"
 
-// Contains the integrated circuit input arguments
 struct CircuitInput {
-	// The target integrated circuit
 	std::string circuitName = "";			
 	CustomizedVector::IntArray arguments;
 };
