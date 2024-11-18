@@ -1,6 +1,5 @@
 #include "IntegratedCircuit.h"
 
-// Create new integrated circuit
 IntegratedCircuit createIntegratedCircuit() {
 	IntegratedCircuit circuit;
 	circuit.tokenizedExpressions = CustomizedString::createCharArray(ProjectConstants::MAX_ARRAY_SIZE);
@@ -8,7 +7,6 @@ IntegratedCircuit createIntegratedCircuit() {
 	return circuit;
 }
 
-// Deallocate memory used from integrated circuit
 void deleteIntegratedCircuit(IntegratedCircuit& circuit) {
 	CustomizedString::deleteCharArray(circuit.tokenizedExpressions);
 	CustomizedString::deleteCharArray(circuit.arguments);
@@ -16,7 +14,6 @@ void deleteIntegratedCircuit(IntegratedCircuit& circuit) {
 	circuit.expression = "";
 }
 
-// Print the data of the integrated circuit
 void printIntegratedCircuit(const IntegratedCircuit& circuit) {
 	const int length = circuit.arguments.length;
 
@@ -26,8 +23,6 @@ void printIntegratedCircuit(const IntegratedCircuit& circuit) {
 	std::cout << circuit.arguments.data[length - 1] << "): " << circuit.expression << std::endl;
 }
 
-// Validates if inputs of integrated circuir are the 
-// same as those used in the logical expression
 bool validateIntegratedCircuit(const IntegratedCircuit& circuit) {
 	for (int i = 0; i < circuit.tokenizedExpressions.length; i++) {
 		const auto token = circuit.tokenizedExpressions.data[i];
