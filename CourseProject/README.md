@@ -2,6 +2,8 @@
 
 The entire source code of the project is available here, along with the "_Basic documentation for Digital Integrated Circuits console simulator.pdf_" file, which is the basic documentation of the project, describing the general functionalities and workflow of the application.
 
+_TODO: File separation in individual directories._
+
 ### 1. Files organization
 ---
 * **Header files**
